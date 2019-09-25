@@ -10,6 +10,7 @@ public class CheckSteps : MonoBehaviour
     private Meepy_CharacterController _controller;
     //private bool SteppedOn = false;
     public Vector3 LowerIt;
+    public GameObject TheBlackness;
 
     public bool Aboolyy;
 
@@ -43,11 +44,14 @@ public class CheckSteps : MonoBehaviour
     }
     private void Update()
     {
+        if(TheBlackness.activeInHierarchy)
+        { 
         if(Aboolyy == true && _controller.isGrounded)
         {
             Instantiate(Step, transform.position - LowerIt, Quaternion.identity);
            // StartCoroutine(SelfDestruct());
             Aboolyy = false;
+        }
         }
     }
 }
