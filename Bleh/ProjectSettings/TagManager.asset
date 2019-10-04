@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Shard
   - RL
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX

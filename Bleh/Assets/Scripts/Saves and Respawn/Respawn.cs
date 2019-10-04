@@ -15,7 +15,7 @@ public class Respawn : MonoBehaviour
     {
       
        transform.position = rl.LastRespawnPointPos;
-        Debug.Log("Respawning at: " + transform.position);
+        //Debug.Log("Respawning at: " + transform.position);
     }
 
     public void ExitLevel()

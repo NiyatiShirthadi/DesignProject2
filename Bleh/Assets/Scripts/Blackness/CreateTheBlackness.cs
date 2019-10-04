@@ -6,6 +6,11 @@ public class CreateTheBlackness : MonoBehaviour
 {
     public GameObject TheBlackness;
     public GameObject BlacknessGuides;
+
+    //private void Awake()
+    //{
+      //  TheBlackness.SetActive(false);
+    //}
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
