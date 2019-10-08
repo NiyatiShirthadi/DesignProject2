@@ -49,6 +49,7 @@ public class CheckSteps : MonoBehaviour
         if(Aboolyy == true && _controller.isGrounded)
         {
             Instantiate(Step, transform.position - LowerIt, Quaternion.identity);
+                Debug.Log("Glowy is on");
            // StartCoroutine(SelfDestruct());
             Aboolyy = false;
         }

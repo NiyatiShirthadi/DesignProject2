@@ -16,7 +16,7 @@ public class GoToExitPortal : MonoBehaviour
         Debug.Log("Go To Exit Now");
         if(collision.CompareTag("Player"))
         {
-            Respawn.ExitLevel();
+            //Respawn.ExitLevel();
             TheBlackness.SetActive(false);
         }
     }

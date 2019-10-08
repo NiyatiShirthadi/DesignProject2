@@ -5,7 +5,7 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
     private RespawnLocator rl;
-    public GameObject ExitToLocation;
+//public GameObject ExitToLocation;
 
     private void Awake()
     {
@@ -18,10 +18,10 @@ public class Respawn : MonoBehaviour
         //Debug.Log("Respawning at: " + transform.position);
     }
 
-    public void ExitLevel()
+  /*  public void ExitLevel()
     {
         transform.position = ExitToLocation.transform.position;
-    }
+    }*/
 
 
 }
