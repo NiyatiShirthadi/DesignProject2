@@ -23,6 +23,7 @@ public class Meepy_Movement : MonoBehaviour
 
     void Awake()
     {
+       // jumpHeight = 
         _animator = GetComponent<Animator>();
         _controller = GetComponent<Meepy_CharacterController>();
 

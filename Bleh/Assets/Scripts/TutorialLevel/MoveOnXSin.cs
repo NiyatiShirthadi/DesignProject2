@@ -11,6 +11,7 @@ public class MoveOnXSin : MonoBehaviour
 
     void Start()
     {
+        Player = GameObject.Find("Player");
         _startPosition = transform.position;
     }
  

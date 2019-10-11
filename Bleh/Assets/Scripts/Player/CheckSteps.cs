@@ -10,47 +10,28 @@ public class CheckSteps : MonoBehaviour
     private Meepy_CharacterController _controller;
     //private bool SteppedOn = false;
     public Vector3 LowerIt;
-    public GameObject TheBlackness;
+    private GameObject TheBlackness;
+    private MeshRenderer Blackness;
 
     public bool Aboolyy;
 
-    /*[SerializeField]
-    public bool StepIsOn {
-        get
-        {
-            return SteppedOn;
-        }
-        set
-        {
-            SteppedOn = value;
-            if(value == true)
-            {
-                Instantiate(Step, transform.position, Quaternion.identity);
-            }
-        }
-    }*/
-   /* IEnumerator SelfDestruct()
-    {
-        yield return new WaitForSeconds(2f);
-        if (Step != null)
-        {
-            Destroy(Step);
-        }
-    }*/
-
+    
     private void Awake()
     {
+        TheBlackness = GameObject.Find("TheBlackness");
+        Blackness = TheBlackness.GetComponent<MeshRenderer>();
+        Blackness.enabled = false;
         _controller = GetComponent<Meepy_CharacterController>();
     }
     private void Update()
     {
-        if(TheBlackness.activeInHierarchy)
+        if(Blackness.enabled == true)
         { 
         if(Aboolyy == true && _controller.isGrounded)
         {
             Instantiate(Step, transform.position - LowerIt, Quaternion.identity);
                 Debug.Log("Glowy is on");
-           // StartCoroutine(SelfDestruct());
+           
             Aboolyy = false;
         }
         }
