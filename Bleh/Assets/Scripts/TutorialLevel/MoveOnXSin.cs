@@ -7,10 +7,11 @@ public class MoveOnXSin : MonoBehaviour
     private Vector3 _startPosition;
     //public float UpScale;
     public GameObject Player;
-   
+    public float Speed;
 
     void Start()
     {
+        Player = GameObject.Find("Player");
         _startPosition = transform.position;
     }
  
@@ -19,6 +20,6 @@ public class MoveOnXSin : MonoBehaviour
 
     void Update()
     {
-        transform.position = _startPosition + new Vector3(Mathf.Sin(Time.time) * 5, 0.0f, 0.0f);
+        transform.position = _startPosition + new Vector3(Mathf.Sin(Time.time) * Speed, 0.0f, 0.0f);
     }
 }

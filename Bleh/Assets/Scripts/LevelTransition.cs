@@ -9,28 +9,29 @@ public class LevelTransition : MonoBehaviour
 
     private void Start()
     {
-        EnterText.SetActive(false); 
+       // EnterText.SetActive(false); 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            EnterText.SetActive(true);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //EnterText.SetActive(true);
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    /*private void OnTriggerExit2D(Collider2D collision)
     {
         EnterText.SetActive(false);
-    }
+    }*/
     private void Update()
     {
-        if(EnterText.activeInHierarchy)
+       /* if(EnterText.activeInHierarchy)
         {
             if(Input.GetKey(KeyCode.Return))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                
             }
-        }
+        }*/
     }
 }

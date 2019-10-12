@@ -21,7 +21,7 @@ public class DetectThePlayer : MonoBehaviour
 
         if (playerDetection.collider.tag == "Player")
         {
-            Debug.Log("player has been sighted");
+           // Debug.Log("player has been sighted");
             playerDetected = true;
         }
         else

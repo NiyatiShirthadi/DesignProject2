@@ -10,49 +10,63 @@ public class CheckSteps : MonoBehaviour
     private Meepy_CharacterController _controller;
     //private bool SteppedOn = false;
     public Vector3 LowerIt;
-    public GameObject TheBlackness;
+    //private GameObject TheBlackness;
+    //private MeshRenderer Blackness;
 
     public bool Aboolyy;
 
-    /*[SerializeField]
-    public bool StepIsOn {
-        get
-        {
-            return SteppedOn;
-        }
-        set
-        {
-            SteppedOn = value;
-            if(value == true)
-            {
-                Instantiate(Step, transform.position, Quaternion.identity);
-            }
-        }
-    }*/
-   /* IEnumerator SelfDestruct()
+    private void Start()
     {
-        yield return new WaitForSeconds(2f);
-        if (Step != null)
-        {
-            Destroy(Step);
-        }
-    }*/
+        CreateTheBlackness.letThereBeDark += ShowSteps;
+    }
 
     private void Awake()
     {
+        /*TheBlackness = GameObject.Find("TheBlackness");
+        Blackness = TheBlackness.GetComponent<MeshRenderer>();
+        Blackness.enabled = false;*/
         _controller = GetComponent<Meepy_CharacterController>();
+
     }
-    private void Update()
+
+    public void ShowSteps()
     {
-        if(TheBlackness.activeInHierarchy)
+       // Debug.Log("Showing steps");
+
+        StartCoroutine(Glowy());
+        
+    }
+
+    IEnumerator Glowy()
+    {
+        for(int i = 1; i < 100000; i++)
         { 
-        if(Aboolyy == true && _controller.isGrounded)
+        if (_controller.isGrounded)
         {
             Instantiate(Step, transform.position - LowerIt, Quaternion.identity);
-                Debug.Log("Glowy is on");
-           // StartCoroutine(SelfDestruct());
-            Aboolyy = false;
+            //Debug.Log("Glowy is on");
+
+            //Aboolyy = false;
         }
+        yield return new WaitForSeconds(0.25f);
         }
     }
+
+    private void OnDisable()
+    {
+        CreateTheBlackness.letThereBeDark -= ShowSteps;
+    }
+    /* private void Update()
+     {
+         if(Blackness.enabled == true)
+         { 
+         if(Aboolyy == true && _controller.isGrounded)
+         {
+             Instantiate(Step, transform.position - LowerIt, Quaternion.identity);
+                 Debug.Log("Glowy is on");
+
+             Aboolyy = false;
+         }
+         }
+     }*/
 }
