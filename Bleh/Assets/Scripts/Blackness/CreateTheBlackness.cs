@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class CreateTheBlackness : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject TheBlackness;
-    private MeshRenderer Blackness;
-    public GameObject BlacknessGuides;
+    //[SerializeField]
+    //private GameObject TheBlackness;
+    //private MeshRenderer Blackness;
+    //public GameObject BlacknessGuides;
 
     private Vector3 _startPosition;
     //public float UpScale;
 
+    public delegate void CreateDarkness();
+    public static event CreateDarkness letThereBeDark;
+
     private void Awake()
     {
-        TheBlackness = GameObject.Find("TheBlackness");
-        Blackness = TheBlackness.GetComponent<MeshRenderer>();
+        //TheBlackness = GameObject.Find("TheBlackness");
+        //Blackness = TheBlackness.GetComponent<MeshRenderer>();
     }
     void Start()
     {
@@ -26,12 +29,17 @@ public class CreateTheBlackness : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            Debug.Log("Player has encountered shard");
+            if(letThereBeDark != null)
+            {
+                letThereBeDark();
+            }
             gameObject.GetComponent<Renderer>().enabled = false;
-            if (Blackness.enabled == false && !BlacknessGuides.activeInHierarchy)
+            /*if (Blackness.enabled == false && !BlacknessGuides.activeInHierarchy)
             {
                 Blackness.enabled = true;
                 BlacknessGuides.SetActive(true);
-            }
+            }*/
         }
     }
 

@@ -13,7 +13,7 @@ public class MakePlayerChild : MonoBehaviour
         Player = GameObject.Find("Player");
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+   /* private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Player")
         {
@@ -29,14 +29,14 @@ public class MakePlayerChild : MonoBehaviour
             Debug.Log("Player has left moving platform");
             Player.transform.parent = null;
         }
-    }
+    }*/
 
-    /* private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D col)
      {
          if (col.gameObject.tag == "Player")
          {
-             Debug.Log("Player has entered moving platform");
-             Player.transform.parent = transform;
+             //Debug.Log("Player has entered moving platform");
+             Player.transform.parent = MovingPlatform.transform;
          }
      }
 
@@ -44,8 +44,8 @@ public class MakePlayerChild : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Player has left moving platform");
+            //Debug.Log("Player has left moving platform");
            Player.transform.parent = null;
         }
-    }*/
+    }
 }
