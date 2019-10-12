@@ -9,7 +9,7 @@ public class Twinkle : MonoBehaviour
     {
         //gameObject.transform.localScale = new Vector3 (0, 0, 0);
         //gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        StartTwinkle();
+       // StartTwinkle();
        // CreateTheBlackness.letThereBeDark += StartTwinkle;
     }
 

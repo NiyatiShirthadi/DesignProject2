@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveBW2Pts1 : MonoBehaviour
+public class MoveBW2PtsOpp : MonoBehaviour
 {
     public Transform LeftPos;
     public Transform RightPos;
@@ -20,7 +20,7 @@ public class MoveBW2Pts1 : MonoBehaviour
     void Update()
     {
         {
-            transform.position = Vector3.Lerp(Pos1, Pos2, (Mathf.Sin(speed * Time.time) + 1.0f) / 2.0f);
+            transform.position = Vector3.Lerp(Pos2, Pos1, (Mathf.Cos(speed * Time.time) + 1.0f) / 2.0f);
         }
     }
 }
