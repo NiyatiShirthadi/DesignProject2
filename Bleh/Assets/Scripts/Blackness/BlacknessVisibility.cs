@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BlacknessVisibility : MonoBehaviour
 {
     private void Start()
     {
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
         CreateTheBlackness.letThereBeDark += RevealBlackness;
     }
@@ -19,7 +20,7 @@ public class BlacknessVisibility : MonoBehaviour
     public void RevealBlackness()
     {
         //Debug.Log("Blackness is HERE!");
-        gameObject.GetComponent<MeshRenderer>().enabled = true;
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     private void OnDisable()
