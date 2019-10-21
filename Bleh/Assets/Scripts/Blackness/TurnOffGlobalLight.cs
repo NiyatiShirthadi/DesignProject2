@@ -17,9 +17,8 @@ public class TurnOffGlobalLight : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        CreateTheBlackness.letThereBeDark -= GLOff;
     }
 }

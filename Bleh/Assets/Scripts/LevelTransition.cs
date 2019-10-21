@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelTransition : MonoBehaviour
 {
-    public GameObject EnterText;
+   // public GameObject EnterText;
 
     private void Start()
     {
@@ -16,6 +16,7 @@ public class LevelTransition : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            //Debug.Log("player exiting")
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             //EnterText.SetActive(true);
         }

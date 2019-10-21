@@ -18,9 +18,8 @@ public class PlayerPointLt : MonoBehaviour
         gameObject.GetComponent<Light2D>().intensity = 1;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        CreateTheBlackness.letThereBeDark -= PlayerLightOn;
     }
 }
