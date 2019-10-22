@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -546,71 +546,6 @@ PrefabInstance:
     - target: {fileID: 2640982942287465033, guid: 625a9f7b7772e8245a7846c8a1cf378f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6242499515857687157, guid: 625a9f7b7772e8245a7846c8a1cf378f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6242499515907321901, guid: 625a9f7b7772e8245a7846c8a1cf378f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6242499515727486887, guid: 625a9f7b7772e8245a7846c8a1cf378f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088482505523767737, guid: 625a9f7b7772e8245a7846c8a1cf378f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088482504444411284, guid: 625a9f7b7772e8245a7846c8a1cf378f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088482503591764159, guid: 625a9f7b7772e8245a7846c8a1cf378f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088482503591764157, guid: 625a9f7b7772e8245a7846c8a1cf378f,
-        type: 3}
-      propertyPath: m_AlphaBlendOnOverlap
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5476362676252941391, guid: 625a9f7b7772e8245a7846c8a1cf378f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5476362675576276669, guid: 625a9f7b7772e8245a7846c8a1cf378f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5476362675754660778, guid: 625a9f7b7772e8245a7846c8a1cf378f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5476362677034139071, guid: 625a9f7b7772e8245a7846c8a1cf378f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5476362677034139065, guid: 625a9f7b7772e8245a7846c8a1cf378f,
-        type: 3}
-      propertyPath: m_AlphaBlendOnOverlap
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5476362675432060018, guid: 625a9f7b7772e8245a7846c8a1cf378f,
-        type: 3}
-      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
