@@ -101,7 +101,7 @@ public class Meepy_Movement : MonoBehaviour
 
 
         // we can only jump whilst grounded
-        if (_controller.isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
+        if (_controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             _velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
             _animator.Play(Animator.StringToHash("Jump"));
