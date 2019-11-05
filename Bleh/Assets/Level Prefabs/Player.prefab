@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1630368292305933027}
   - component: {fileID: 1630368292305933028}
   - component: {fileID: 1630368292305933029}
+  - component: {fileID: 8615521621940004568}
   - component: {fileID: 1630368292305933031}
   m_Layer: 8
   m_Name: Player
@@ -176,7 +177,7 @@ MonoBehaviour:
   oneWayPlatformMask:
     serializedVersion: 2
     m_Bits: 512
-  slopeLimit: 90
+  slopeLimit: 45
   jumpingThreshold: 0.07
   slopeSpeedMultiplier:
     serializedVersion: 2
@@ -221,6 +222,18 @@ MonoBehaviour:
   groundDamping: 20
   inAirDamping: 5
   jumpHeight: 3
+--- !u!114 &8615521621940004568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630368292305933026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5faf7c5cc4a6343b18db9790f4fbd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1630368292305933031
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,6 +20,8 @@ public class Meepy_Movement : MonoBehaviour
     private RaycastHit2D _lastControllerColliderHit;
     private Vector3 _velocity;
 
+    private bool canMove = true;
+
 
     void Awake()
     {
@@ -31,8 +33,16 @@ public class Meepy_Movement : MonoBehaviour
         _controller.onControllerCollidedEvent += onControllerCollider;
         _controller.onTriggerEnterEvent += onTriggerEnterEvent;
         _controller.onTriggerExitEvent += onTriggerExitEvent;
+
+        ZoomOutTrigger.EndScene += stopInputs;
     }
 
+
+    public void stopInputs()
+    {
+        canMove = false;
+              
+    }
 
     #region Event Listeners
 
@@ -73,7 +83,7 @@ public class Meepy_Movement : MonoBehaviour
         if (_controller.isGrounded)
             _velocity.y = 0;
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) && canMove == true)
         {
             normalizedHorizontalSpeed = 1;
             if (transform.localScale.x < 0f)
@@ -82,7 +92,7 @@ public class Meepy_Movement : MonoBehaviour
             if (_controller.isGrounded)
                 _animator.Play(Animator.StringToHash("Run"));
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow) && canMove == true)
         {
             normalizedHorizontalSpeed = -1;
             if (transform.localScale.x > 0f)
@@ -101,7 +111,7 @@ public class Meepy_Movement : MonoBehaviour
 
 
         // we can only jump whilst grounded
-        if (_controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (_controller.isGrounded && Input.GetKeyDown(KeyCode.Space) && canMove == true)
         {
             _velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
             _animator.Play(Animator.StringToHash("Jump"));
@@ -117,16 +127,22 @@ public class Meepy_Movement : MonoBehaviour
 
         // if holding down bump up our movement amount and turn off one way platform detection for a frame.
         // this lets us jump down through one way platforms
-        if (_controller.isGrounded && Input.GetKey(KeyCode.DownArrow))
-        {
-            _velocity.y *= 3f;
-            _controller.ignoreOneWayPlatformsThisFrame = true;
-        }
+        //if (_controller.isGrounded && Input.GetKey(KeyCode.DownArrow))
+        //{
+        //    _velocity.y *= 3f;
+        //    _controller.ignoreOneWayPlatformsThisFrame = true;
+        //}
 
         _controller.move(_velocity * Time.deltaTime);
 
         // grab our current _velocity to use as a base for all calculations
         _velocity = _controller.velocity;
+    }
+
+    private void OnDisable()
+    {
+        ZoomOutTrigger.EndScene -= stopInputs;
+
     }
 
 }
