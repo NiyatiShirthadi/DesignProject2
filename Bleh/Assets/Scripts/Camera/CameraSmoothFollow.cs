@@ -18,6 +18,7 @@ public class CameraSmoothFollow : MonoBehaviour
 
     void Awake()
     {
+
         target = GameObject.Find("Player").GetComponent<Transform>();
         transform = gameObject.transform;
         _playerController = target.GetComponent<Meepy_CharacterController>();

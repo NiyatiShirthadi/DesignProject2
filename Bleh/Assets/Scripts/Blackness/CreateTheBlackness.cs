@@ -35,6 +35,7 @@ public class CreateTheBlackness : MonoBehaviour
                 letThereBeDark();
             }
             gameObject.GetComponent<Renderer>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = false;
             /*if (Blackness.enabled == false && !BlacknessGuides.activeInHierarchy)
             {
                 Blackness.enabled = true;
