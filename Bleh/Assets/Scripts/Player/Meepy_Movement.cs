@@ -3,6 +3,7 @@ using System.Collections;
 using CC2D;
 
 
+
 public class Meepy_Movement : MonoBehaviour
 {
     // movement config
@@ -22,6 +23,8 @@ public class Meepy_Movement : MonoBehaviour
 
     private bool canMove = true;
 
+    private Rigidbody2D Rb;
+
 
     void Awake()
     {
@@ -34,7 +37,10 @@ public class Meepy_Movement : MonoBehaviour
         _controller.onTriggerEnterEvent += onTriggerEnterEvent;
         _controller.onTriggerExitEvent += onTriggerExitEvent;
 
+        Rb = GetComponent<Rigidbody2D>();
+
         ZoomOutTrigger.EndScene += stopInputs;
+        RespawnTrigger.Death += deathAnim;
     }
 
 
@@ -42,6 +48,23 @@ public class Meepy_Movement : MonoBehaviour
     {
         canMove = false;
               
+    }
+
+    public void deathAnim()
+    {
+        StartCoroutine(playerDeath());
+    }
+
+    IEnumerator playerDeath()
+    {
+        canMove = false;
+        Rb.constraints = RigidbodyConstraints2D.FreezeAll;
+
+        _animator.Play(Animator.StringToHash("Death"));
+
+        yield return new WaitForSeconds(0f);
+        canMove = false;
+        Rb.constraints = RigidbodyConstraints2D.None;
     }
 
     #region Event Listeners
@@ -142,7 +165,7 @@ public class Meepy_Movement : MonoBehaviour
     private void OnDisable()
     {
         ZoomOutTrigger.EndScene -= stopInputs;
-
+        RespawnTrigger.Death += deathAnim;
     }
 
 }
