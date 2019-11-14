@@ -2451,11 +2451,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TheBlackness
       objectReference: {fileID: 0}
-    - target: {fileID: 2503562407603046766, guid: d7b9d5bede2083a40a6492d4f045c048,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2503562407603046767, guid: d7b9d5bede2083a40a6492d4f045c048,
         type: 3}
       propertyPath: m_LocalPosition.x

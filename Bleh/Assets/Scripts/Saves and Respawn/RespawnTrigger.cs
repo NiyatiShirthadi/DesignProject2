@@ -31,12 +31,13 @@ public class RespawnTrigger : MonoBehaviour
 
     public void ReloadLevel()
     {
-        StartCoroutine(ReloadingNow());
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // StartCoroutine(ReloadingNow());
     }
 
-    IEnumerator ReloadingNow()
-    {
-        yield return new WaitForSeconds(0.25f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+    //IEnumerator ReloadingNow()
+    //{
+    //    yield return new WaitForSeconds(0f);
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    //}
 }

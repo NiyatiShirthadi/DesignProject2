@@ -187,6 +187,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2006273165154012610, guid: 4cd11b34596f6b442a05f8fb3d99b6b7,
+        type: 3}
+      propertyPath: m_AlphaBlendOnOverlap
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497592792986042075, guid: 4cd11b34596f6b442a05f8fb3d99b6b7,
+        type: 3}
+      propertyPath: m_AlphaBlendOnOverlap
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cd11b34596f6b442a05f8fb3d99b6b7, type: 3}
 --- !u!1001 &2673536790573649425
@@ -395,6 +405,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 7727377447530806763, guid: 697e12f73b0020b46a1bb802f776ad61,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4905115454327733503, guid: 697e12f73b0020b46a1bb802f776ad61,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -453,16 +468,6 @@ PrefabInstance:
     - target: {fileID: 4733632714399992518, guid: 697e12f73b0020b46a1bb802f776ad61,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4733632714399992514, guid: 697e12f73b0020b46a1bb802f776ad61,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4733632714884233198, guid: 697e12f73b0020b46a1bb802f776ad61,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

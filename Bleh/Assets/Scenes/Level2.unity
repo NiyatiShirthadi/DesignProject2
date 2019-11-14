@@ -280,6 +280,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 7727377447530806763, guid: 697e12f73b0020b46a1bb802f776ad61,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4905115454327733503, guid: 697e12f73b0020b46a1bb802f776ad61,
         type: 3}
       propertyPath: m_LocalPosition.x

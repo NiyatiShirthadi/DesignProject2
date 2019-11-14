@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -270,6 +270,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 7727377447530806763, guid: 697e12f73b0020b46a1bb802f776ad61,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4905115454327733503, guid: 697e12f73b0020b46a1bb802f776ad61,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -402,6 +407,11 @@ PrefabInstance:
     - target: {fileID: 6815252360360636480, guid: 34c8839359432a54ab7ff58c9a281a82,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ff17c3a7a777dee40a943a34d3bd7756, type: 2}
+    - target: {fileID: 6815252360360636487, guid: 34c8839359432a54ab7ff58c9a281a82,
+        type: 3}
+      propertyPath: newMaterial
       value: 
       objectReference: {fileID: 2100000, guid: ff17c3a7a777dee40a943a34d3bd7756, type: 2}
     m_RemovedComponents: []

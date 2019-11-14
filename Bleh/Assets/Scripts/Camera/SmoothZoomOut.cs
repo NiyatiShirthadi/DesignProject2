@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SmoothZoomOut : MonoBehaviour
 {
+    public delegate void Thankyou();
+    public static event Thankyou Ending;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,11 @@ public class SmoothZoomOut : MonoBehaviour
             currentTime += Time.deltaTime;
             Camera.main.orthographicSize = Mathf.Lerp(7.5f, 11.5f, currentTime / zoomTime);
             yield return new WaitForSeconds(0.025f);
+        }
+
+        if (Ending != null)
+        {
+            Ending();
         }
     }
 

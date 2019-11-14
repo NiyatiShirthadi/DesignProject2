@@ -5,18 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class LevelTransition : MonoBehaviour
 {
-   // public GameObject EnterText;
+    public delegate void exitDoor();
+    public static event exitDoor nextLevel;
 
     private void Start()
     {
-       // EnterText.SetActive(false); 
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            //Debug.Log("player exiting")
+            if (nextLevel != null)
+            {
+                nextLevel();
+            }
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             //EnterText.SetActive(true);
         }

@@ -40,7 +40,7 @@ public class Meepy_Movement : MonoBehaviour
         Rb = GetComponent<Rigidbody2D>();
 
         ZoomOutTrigger.EndScene += stopInputs;
-        RespawnTrigger.Death += deathAnim;
+        //RespawnTrigger.Death += deathAnim;
     }
 
 
@@ -50,22 +50,22 @@ public class Meepy_Movement : MonoBehaviour
               
     }
 
-    public void deathAnim()
-    {
-        StartCoroutine(playerDeath());
-    }
+    //public void deathAnim()
+    //{
+    //    StartCoroutine(playerDeath());
+    //}
 
-    IEnumerator playerDeath()
-    {
-        canMove = false;
-        Rb.constraints = RigidbodyConstraints2D.FreezeAll;
+    //IEnumerator playerDeath()
+    //{
+    //    canMove = false;
+    //    Rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
-        _animator.Play(Animator.StringToHash("Death"));
+    //    _animator.Play(Animator.StringToHash("Death"));
 
-        yield return new WaitForSeconds(0f);
-        canMove = false;
-        Rb.constraints = RigidbodyConstraints2D.None;
-    }
+    //    yield return new WaitForSeconds(0f);
+    //    canMove = false;
+    //    Rb.constraints = RigidbodyConstraints2D.None;
+    //}
 
     #region Event Listeners
 
@@ -165,7 +165,7 @@ public class Meepy_Movement : MonoBehaviour
     private void OnDisable()
     {
         ZoomOutTrigger.EndScene -= stopInputs;
-        RespawnTrigger.Death += deathAnim;
+        //RespawnTrigger.Death += deathAnim;
     }
 
 }

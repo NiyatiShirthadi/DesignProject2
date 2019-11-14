@@ -5,19 +5,22 @@ using UnityEngine;
 
 public class BlacknessVisibility : MonoBehaviour
 {
-
+    public Material newMaterial;
     public Renderer spriteRenderer;
     public Material InstancedMaterial;
 
     private void Start()
     {
+
         spriteRenderer = gameObject.GetComponent<Renderer>();
-        InstancedMaterial = spriteRenderer.material;
+        spriteRenderer.material = newMaterial;
+        InstancedMaterial = gameObject.GetComponent<Renderer>().material;
 
         InstancedMaterial.SetFloat("Vector1_44E09FD1", -0.1f);
         //gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
         CreateTheBlackness.letThereBeDark += RevealBlackness;
+        LevelTransition.nextLevel += resetBlackness;
 
         
     }
@@ -27,6 +30,18 @@ public class BlacknessVisibility : MonoBehaviour
         
     }
     
+    public void resetBlackness()
+    {
+        StartCoroutine(DelayReset());
+        
+    }
+
+    IEnumerator DelayReset()
+    {
+        yield return new WaitForSeconds(0.5f);
+        InstancedMaterial.SetFloat("Vector1_44E09FD1", -0.1f);
+    }
+
     public void RevealBlackness()
     {
         //Debug.Log("Blackness is HERE!");
@@ -57,8 +72,8 @@ public class BlacknessVisibility : MonoBehaviour
     private void OnDisable()
     {
         CreateTheBlackness.letThereBeDark -= RevealBlackness;
+        LevelTransition.nextLevel -= resetBlackness;
 
-        InstancedMaterial.SetFloat("Vector1_44E09FD1", -0.1f);
     }
 
 }

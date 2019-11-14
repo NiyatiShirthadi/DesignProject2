@@ -57,10 +57,10 @@ public class PauseMenu : MonoBehaviour
         Resume();
     }
 
-    public void ReplayLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Resume();
-    }
+    //public void ReplayLevel()
+    //{
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    //    Resume();
+    //}
 
 }
