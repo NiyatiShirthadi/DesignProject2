@@ -24,7 +24,7 @@ public class DemoActivate : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.25f);
         Temp.a = 1f;
 
         gameObject.GetComponent<SpriteRenderer>().color = Temp;
